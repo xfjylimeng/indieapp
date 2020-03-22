@@ -1,8 +1,8 @@
 <?php
 
-namespace lemon\library;
+namespace yiqiniu\library;
 
-use lemon\facade\Redis;
+use yiqiniu\facade\Redis;
 use think\Exception;
 
 class Appauth

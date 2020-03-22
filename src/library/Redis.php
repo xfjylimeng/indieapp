@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  */
 
-namespace lemon\library;
+namespace yiqiniu\library;
 
 
 class Redis
