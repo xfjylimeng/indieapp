@@ -1,0 +1,23 @@
+{
+    "name": "yiqiniu/indieapp",
+    "description": "一起牛独立应用权限获取",
+    "type": "library",
+    "require": {
+        "php": ">=7.0.0",
+        "topthink/framework": "^6.0.0",
+        "yiqiniu/think-extend": "6.0.*.dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "limeng",
+            "email": "694253034@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "yiqiniu\\":"src"
+        }
+    }
+}
