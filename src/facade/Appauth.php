@@ -1,7 +1,7 @@
 <?php
 
 
-namespace yiqiniu\facade;
+namespace lemon\facade;
 
 
 use think\Facade;
@@ -17,7 +17,7 @@ class Appauth extends Facade
 
     protected static function getFacadeClass()
     {
-        return 'yiqiniu\library\Appauth';
+        return 'lemon\library\Appauth';
     }
 
 }

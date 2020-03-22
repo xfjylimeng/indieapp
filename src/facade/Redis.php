@@ -6,7 +6,7 @@
  * Time: 上午10:59
  */
 
-namespace yiqiniu\facade;
+namespace lemon\facade;
 
 use think\Facade;
 
@@ -32,6 +32,6 @@ class Redis extends Facade
 
     protected static function getFacadeClass()
     {
-        return 'yiqiniu\library\Redis';
+        return 'lemon\library\Redis';
     }
 }

@@ -1,12 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: songpeipeng
- * Date: 2018/10/8
- * Time: 下午2:44
  */
 
-namespace yiqiniu\library;
+namespace lemon\library;
 
 
 class Redis
