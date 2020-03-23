@@ -18,7 +18,7 @@ class Appauth
                 $url = $api_info['get_menu'];        //请求地址
                 $appid = $api_info['appid'];    //appid
             }else{
-                $z_auth = config('api.z_auth');  //读取 配置信息
+                $z_auth = config('indieapp.app_auth');  //读取 配置信息
                 $url = $z_auth['get_menu'];        //请求地址
                 $appid = $z_auth['appid'];    //appid
             }
@@ -56,7 +56,7 @@ class Appauth
                 $url = $api_info['login'];        //请求地址
                 $appid = $api_info['appid'];    //appid
             }else{
-                $z_auth = config('api.z_auth');  //读取 配置信息
+                $z_auth = config('indieapp.app_auth');  //读取 配置信息
                 $url = $z_auth['login'];        //请求地址
                 $appid = $z_auth['appid'];    //appid
             }
