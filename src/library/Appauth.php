@@ -7,7 +7,13 @@ use think\Exception;
 
 class Appauth
 {
-    //获取 总后台 所有权限列表
+
+    /**
+     * 获取总后台所有权限列表
+     * @param string $authorization token信息
+     * @param array $api_info 接口请求信息
+     * @return array
+     */
     public  function auth_list($authorization='',$api_info=[])
     {
         try {
@@ -36,21 +42,26 @@ class Appauth
                     $authlist[$value] = true;
                 }
                 Redis::set('auth_' . $authorization, ['authlist' => $authlist, 'admin_info' => $admin_info], 2100); //35分钟有效期
-                api_result(200, '', ['operaction' => $authlist]);
+                return ['code'=>200,'operaction'=>$authlist];
             } else {
-                api_result($result['code'], $result['msg']);
+                return ['code'=>$result['code'],'msg'=>$result['msg']];
             }
-
         } catch (Exception $e) {
             api_result($e);
         }
     }
 
+    /**
+     * @param array $params
+     * @param array $api_info
+     * @return array
+     * @throws \Exception
+     */
     public  function login($params=[],$api_info=[])
     {
         try {
             if (empty($params['username']) || empty($params['password'])) {
-                api_result(401, '用户登录信息不为空');
+                api_result(400, '用户登录信息不为空');
             }
             if(!empty($api_info)){
                 $url = $api_info['login'];        //请求地址
@@ -75,8 +86,9 @@ class Appauth
                 }
                 Redis::set('auth_' . $token, ['authlist' => $authlist, 'admin_info' => $admin_info], 2100); //35分钟有效期
                 api_result(['operaction' => $authlist, 'token' => $token]);
+                return ['code'=>200,'operaction'=>$authlist,'token'=>$token];
             } else {
-                api_result($result['code'], $result['msg']);
+                return ['code'=>$result['code'],'msg'=>$result['msg']];
             }
         } catch (Exception $e) {
             api_result($e);

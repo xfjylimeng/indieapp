@@ -1,5 +1,9 @@
 <?php
 
+/***
+ *  独立应用获取授权请求接口
+ */
+
 return [
     "app_auth" => [
         'url' => 'https://tadmin.myyqn.com/facai/appauth/verify_auth',        //验证操作权限
